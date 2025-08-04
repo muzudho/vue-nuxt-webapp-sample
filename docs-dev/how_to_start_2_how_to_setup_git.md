@@ -2,7 +2,7 @@
 
 ## ローカルPCに向けての操作
 
-カレントディレクトリーの例： 📁 `C:\Users\muzud\OneDrive\ドキュメント\GitHub\tauri-vue-nuxt-webapp-sample`  
+カレントディレクトリーの例： 📁 `C:\Users\muzud\OneDrive\ドキュメント\GitHub\vue-nuxt-webapp-sample`  
 
 ```shell
 git init
@@ -25,12 +25,12 @@ git commit -m "Initial commit"
 
 ## このプロジェクトを Git Hub にアップロードしたい
 
-Git Hub へ、 `tauri-vue-nuxt-webapp-sample` という名前のリポジトリーを、中身空っぽで作成する。  
+Git Hub へ、 `vue-nuxt-webapp-sample` という名前のリポジトリーを、中身空っぽで作成する。  
 
 以下のコマンドを打鍵。  
 
 ```shell
-git remote add origin https://github.com/muzudho/tauri-vue-nuxt-webapp-sample.git
+git remote add origin https://github.com/muzudho/vue-nuxt-webapp-sample.git
 git branch -M main
 git push -u origin main
 ```

@@ -3,7 +3,7 @@
 ## Node.JS のバージョン確認
 
 Node.JS がインストール済みとします。  
-カレントディレクトリーの例： 📁 `C:\Users\muzud\OneDrive\ドキュメント\GitHub\tauri-vue-nuxt-webapp-sample`  
+カレントディレクトリーの例： 📁 `C:\Users\muzud\OneDrive\ドキュメント\GitHub\vue-nuxt-webapp-sample`  
 
 （パワーシェルではなく、）コマンドプロンプトで以下を打鍵します。  
 
@@ -20,7 +20,7 @@ npx nuxi@latest init .
 
 バージョンを尋ねられる。 `y` で進む。  
 
-📁 `C:/Users/muzud/OneDrive/ドキュメント/GitHub/tauri-vue-nuxt-webapp-sample` ディレクトリーに上書きするか尋ねられる。 `Override its contents` で進む。  
+📁 `C:/Users/muzud/OneDrive/ドキュメント/GitHub/vue-nuxt-webapp-sample` ディレクトリーに上書きするか尋ねられる。 `Override its contents` で進む。  
 
 パッケージ・マネージャー（package manager）をどれにするか尋ねられる。 `pnpm` を選ぶ。  
 
@@ -52,7 +52,7 @@ Git リポジトリー（git repository）を初期化するか尋ねられる�
 
 ```shell
 pnpm run dev
-        > nuxt-app@ dev C:\Users\muzud\OneDrive\ドキュメント\GitHub\tauri-vue-nuxt-webapp-sample
+        > nuxt-app@ dev C:\Users\muzud\OneDrive\ドキュメント\GitHub\vue-nuxt-webapp-sample
         > nuxt dev
 
         Nuxt 4.0.2 with Nitro 2.12.4                                                                 nuxi 16:39:33
