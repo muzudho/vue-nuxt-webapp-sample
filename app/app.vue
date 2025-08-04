@@ -11,11 +11,11 @@
                     </v-col>
                     <v-btn>あいうボタン</v-btn>
                 </v-row>
+                <div>
+                    <NuxtRouteAnnouncer />
+                    <NuxtWelcome />
+                </div>
             </v-container>
         </v-main>
     </v-app>
-    <div>
-        <NuxtRouteAnnouncer />
-        <NuxtWelcome />
-    </div>
 </template>
