@@ -115,7 +115,18 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 Nuxt3 では、 app.vue はプロジェクトのルートに置く。  
 
-📄 `/app/app.vue` を、 📄 `/app.vue` へ移動。  
+* 📄 `/app/app.vue` を、 📄 `/app.vue` へ移動。  
+* 📄 `/app.vue` の内容を、 📄 `/pages/index.vue` へ移動。  
+
+📄 `/app.vue` の内容を、以下のように変更。  
+
+```vue
+<template>
+    <div>
+        <NuxtPage />
+    </div>
+</template>
+```
 
 
 ## 起動
