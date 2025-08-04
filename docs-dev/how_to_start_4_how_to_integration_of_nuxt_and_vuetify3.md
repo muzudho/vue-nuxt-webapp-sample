@@ -113,6 +113,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 ## app.vue のディレクトリーを変更
 
+Nuxt3 では、 app.vue はプロジェクトのルートに置く。  
+
 📄 `/app/app.vue` を、 📄 `/app.vue` へ移動。  
 
 
