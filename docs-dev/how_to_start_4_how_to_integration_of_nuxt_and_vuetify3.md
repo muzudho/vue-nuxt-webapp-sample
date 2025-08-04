@@ -110,6 +110,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 }
 ```
 
+
+## app.vue のディレクトリーを変更
+
+📄 `/app/app.vue` を、 📄 `/app.vue` へ移動。  
+
+
 ## 起動
 
 以下のコマンドを打鍵。  
