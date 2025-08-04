@@ -76,12 +76,47 @@ export default defineNuxtPlugin((nuxtApp) => {
 }
 ```
 
+## tsconfig.json ファイルを変更
+
+変更前：  
+
+```json
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "files": [],
+  "references": [
+    {
+      "path": "./.nuxt/tsconfig.app.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.server.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.shared.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.node.json"
+    }
+  ]
+}
+```
+
+変更後：  
+
+```json
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
+}
+```
+
 ## 起動
 
 以下のコマンドを打鍵。  
 
 ```shell
 pnpm install
+        # 📁 `/node_modules` フォルダー、📁 `/.nuxt` フォルダーが作成されます。
 ```
 
 ```shell
@@ -90,4 +125,12 @@ pnpm run build
 
 ```shell
 pnpm run dev
+```
+
+## トラブルシューティング
+
+📁 `/.nuxt` を削除。  
+
+```shell
+pnpm dev
 ```
