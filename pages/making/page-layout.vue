@@ -1,4 +1,9 @@
 <template>
+    <h2>説明を始める前に、説明ページのレイアウトを決めておこうぜ！</h2>
+    <section class="sec-2">
+        凡例だぜ（＾▽＾）！
+    </section>
+
     <v-container>
         <!-- 上は［巻］＞［編］＞［部］ -->
         <h1>章（1 Chapter）の見出し</h1>
@@ -40,5 +45,8 @@
             １．１．１．１．１．１号の本文だぜ（＾▽＾）！
         </section>
 
-</v-container>
+    </v-container>
+
+    <hr/>
+    <router-link to="/making">メイキングに戻る</router-link>
 </template>

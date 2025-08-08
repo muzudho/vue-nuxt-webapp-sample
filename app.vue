@@ -13,7 +13,6 @@
                     -->
                     <router-link to="/">ホーム</router-link> |
                     <router-link to="/about">About</router-link> |
-                    <router-link to="/page-layout">PageLayout</router-link> |
                     <router-link to="/making">メイキング</router-link>
                 </nav>
 
