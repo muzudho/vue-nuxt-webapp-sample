@@ -1,8 +1,8 @@
 <template>
     <v-app>
         <v-main>
-
             <NuxtLayout>
+
                 <!-- ナビゲーション -->
                 <nav>
                     <!--
@@ -18,8 +18,8 @@
 
                 <!-- /pages フォルダーの中にある .vue ファイル がここに埋め込まれます。 -->
                 <NuxtPage />
-            </NuxtLayout>
 
+            </NuxtLayout>
         </v-main>
     </v-app>
 </template>
