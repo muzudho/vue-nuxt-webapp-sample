@@ -2,34 +2,20 @@
 // # インポート #
 // ##############
 
-import { defineNuxtPlugin } from 'nuxt/app'; // ここでインポート
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
+// +++++++++++
+// + Nuxt 用 +
+// +++++++++++
+
+import { defineNuxtPlugin } from 'nuxt/app';
+
+
 // ################
-// # エクスポート #
+// # スタイル設定 #
 // ################
-
-export default defineNuxtPlugin((nuxtApp) => {
-    const vuetify = createVuetify({
-        components,
-        directives,
-        theme: {
-            defaultTheme: 'myCustomLightTheme',
-            themes: {
-                myCustomLightTheme,
-            },
-        },
-    });
-
-    nuxtApp.vueApp.use(vuetify);
-});
-
-
-// ############
-// # サブ設定 #
-// ############
 
 // https://vuetifyjs.com/ja/features/theme/#custom-themes
 const myCustomLightTheme = {
@@ -69,3 +55,23 @@ const myCustomLightTheme = {
         'theme-on-code': '#000000',
     }
 }
+
+
+// ################
+// # エクスポート #
+// ################
+
+export default defineNuxtPlugin((nuxtApp) => {
+    const vuetify = createVuetify({
+        components,
+        directives,
+        theme: {
+            defaultTheme: 'myCustomLightTheme',
+            themes: {
+                myCustomLightTheme,
+            },
+        },
+    });
+
+    nuxtApp.vueApp.use(vuetify);
+});
