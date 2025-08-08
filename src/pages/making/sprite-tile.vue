@@ -24,6 +24,7 @@
     // # インポート #
     // ##############
 
-    import Tile from '@/components/Tile.vue';
+    //import Tile from '@/components/Tile.vue';
+    import Tile from '../../components/Tile.vue';
 
 </script>

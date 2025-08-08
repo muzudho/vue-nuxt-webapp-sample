@@ -1,11 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+# 作業日誌 2025-08
+
+## [2025-08-09_Sat]
+
+ルートディレクトリーにフォルダーが増えてきたので、  
+📁 `src` フォルダーを作って、その中にフロントエンドのファイルを移動したい。  
+
+📄 `nuxt.config.ts` ファイルを編集（抜粋）：  
+
+```ts
 export default defineNuxtConfig({
-    compatibilityDate: '2025-07-15',
-    devtools: { enabled: true },
-    css: ["vuetify/styles", "@mdi/font/css/materialdesignicons.css"],
-    build: {
-        transpile: ["vuetify"],
-    },
     srcDir: 'src/', // srcフォルダをルートに設定
     dir: {  // マッピングか？
         assets: 'assets', // src/assets
@@ -16,3 +19,4 @@ export default defineNuxtConfig({
         public: '../public', // /public
     },
 })
+```
