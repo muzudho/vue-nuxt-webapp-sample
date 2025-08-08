@@ -15,3 +15,9 @@
         </v-main>
     </v-app>
 </template>
+
+<style>
+
+    @import './styles/warabenture.css';
+
+</style>
