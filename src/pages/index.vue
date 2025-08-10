@@ -34,7 +34,7 @@
     const routes = [
         "/",                            // ホームのURL
         "/making",                      // メイキングのURL
-        "/about",                       // アバウトのURL
+        "/about",                       // ［このサイトについて］のURL
         "/welcome-to-tauri-and-view"    // Tauri のウェルカムページ
     ];
 
@@ -58,7 +58,7 @@
         new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['ホーム', 'メイキング', 'アバウト', 'ページ無し'],
+                labels: ['ホーム', 'メイキング', 'このサイトについて', 'ページ無し'],
                 datasets: [{
                     data: [40, 40, 15, 5],
                     backgroundColor: [
