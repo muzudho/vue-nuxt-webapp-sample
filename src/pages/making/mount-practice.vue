@@ -1,7 +1,8 @@
 <template>
-    <h2>onMounted を使う練習だぜ！</h2>
+    <the-header/>
 
-    <section class="sec-2">
+    <h3>onMounted を使う練習だぜ！</h3>
+    <section class="sec-3">
         <p>{{ textVM }}</p>
 
         <pre>
@@ -36,6 +37,12 @@
     // ##############
 
     import { onMounted, ref } from 'vue';
+
+    // ++++++++++++++++++
+    // + コンポーネント +
+    // ++++++++++++++++++
+
+    import TheHeader from './the-header.vue';
 
     // ##############
     // # 共有データ #
