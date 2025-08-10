@@ -1,5 +1,9 @@
 <template>
-    ここは、見出しの説明だぜ（＾▽＾）！<br/>
+    <h2>説明を始める前に、説明ページのレイアウトを決めておこうぜ！</h2>
+    <section class="sec-2">
+        凡例だぜ（＾▽＾）！
+    </section>
+
     <v-container style="border:dashed 4px gray;">
         <h1>ワラベンチャー</h1>
         <section class="sec-1">
@@ -40,5 +44,5 @@
 
     </v-container>
     <hr/>
-    <router-link to="/making">メイキングに戻る</router-link>
+    <router-link to="/making">メイキングの先頭に戻る</router-link>
 </template>

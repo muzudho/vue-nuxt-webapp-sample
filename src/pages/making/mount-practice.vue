@@ -26,7 +26,7 @@
 
     <hr/>
     <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
-    <router-link to="/making">メイキングに戻る</router-link>
+    <router-link to="/making">メイキングの先頭に戻る</router-link>
 </template>
 
 <script setup lang="ts">
