@@ -8,17 +8,22 @@
         <div style="position:relative; left: 0; top: 0;">
             
             <!-- グリッド -->
-            <div style="position:absolute; top: 0px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top: 0px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top: 0px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+            <div v-for="i in 9" :key="i"
+                :style="`position:absolute; top: ${Math.floor((i - 1) / 3) * 32}px; left: ${((i - 1) % 3) * 32}px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;`"></div>
+            <!--
+                👆 上記のコードは、以下のコードと同じ。
+                <div style="position:absolute; top: 0px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top: 0px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top: 0px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
 
-            <div style="position:absolute; top:32px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top:32px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top:32px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:32px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:32px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:32px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
 
-            <div style="position:absolute; top:64px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top:64px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
-            <div style="position:absolute; top:64px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:64px; left: 0px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:64px; left:32px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+                <div style="position:absolute; top:64px; left:64px; width:32px; height:32px; zoom: 4; border: solid 1px lightgray;"></div>
+            -->
 
             <!-- プレイヤー１ -->
             <TileAnimation
@@ -71,34 +76,42 @@
     const slow = ref<number>(8);   // スローモーションの倍率の初期値
     const timerId = ref<number | null>(null);   // タイマーのIDを保持
 
+    // キャラクターの向きと、歩行タイルの指定
+    const cellWidth = 32;
+    const cellHeight = 32;
     const sourceFrames = {
         up:[    // 上向き
-            {top:   0, left:    0, width: 32, height: 32 },
-            {top:   0, left:   32, width: 32, height: 32 },
-            {top:   0, left:    0, width: 32, height: 32 },
-            {top:   0, left:   32, width: 32, height: 32 },
+            {top:  0 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  0 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  0 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  0 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
         ],
         right:[ // 右向き
-            {top:  32, left:    0, width: 32, height: 32 },
-            {top:  32, left:   32, width: 32, height: 32 },
-            {top:  32, left:    0, width: 32, height: 32 },
-            {top:  32, left:   32, width: 32, height: 32 },
+            {top:  1 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  1 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  1 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  1 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
         ],
         down:[  // 下向き
-            {top:  64, left:    0, width: 32, height: 32 },
-            {top:  64, left:   32, width: 32, height: 32 },
-            {top:  64, left:    0, width: 32, height: 32 },
-            {top:  64, left:   32, width: 32, height: 32 },
+            {top:  2 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  2 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  2 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  2 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
         ],
         left:[  // 左向き
-            {top:  96, left:    0, width: 32, height: 32 },
-            {top:  96, left:   32, width: 32, height: 32 },
-            {top:  96, left:    0, width: 32, height: 32 },
-            {top:  96, left:   32, width: 32, height: 32 },
+            {top:  3 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  3 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  3 * cellHeight, left: 0 * cellWidth, width: cellWidth, height: cellHeight },
+            {top:  3 * cellHeight, left: 1 * cellWidth, width: cellWidth, height: cellHeight },
         ]
     };
+
     const p1Frames = ref(sourceFrames["down"]);
     const p1MotionWait = ref(0);  // TODO 入力キーごとに用意したい。
+    const moLeft = -1;  // モーション（motion）定数。左に移動する
+    const moRight = 1;
+    const moUp = -1;
+    const moDown = 1;
     const p1Motion = ref<Record<string, number>>({  // 入力
         xAxis: 0,   // 負なら左、正なら右
         yAxis: 0,   // 負なら上、正なら下
@@ -142,19 +155,19 @@
                 // 入力（上下左右への移動）をモーションに変換
                 if (p1MotionWait.value<=0) {   // ウェイトが無ければ、入力を受け付ける。
                     if (p1Input.ArrowLeft) {
-                        p1Motion.value["xAxis"] = -1; // 左
+                        p1Motion.value["xAxis"] = moLeft; // 左
                     }
 
                     if (p1Input.ArrowRight) {
-                        p1Motion.value["xAxis"] = 1;  // 右
+                        p1Motion.value["xAxis"] = moRight;  // 右
                     }
 
                     if (p1Input.ArrowUp) {
-                        p1Motion.value["yAxis"] = -1;   // 上
+                        p1Motion.value["yAxis"] = moUp;   // 上
                     }
 
                     if (p1Input.ArrowDown) {
-                        p1Motion.value["yAxis"] = 1;   // 下
+                        p1Motion.value["yAxis"] = moDown;   // 下
                     }
 
                     if (p1Motion.value["xAxis"]!=0 || p1Motion.value["yAxis"]!=0) {
@@ -165,19 +178,19 @@
                 // 移動処理
                 // 斜め方向の場合、上下を優先する。
                 if (p1Motion.value["xAxis"]==1) {   // 右
-                    p1Left.value += p1Speed.value;
                     p1Frames.value = sourceFrames["right"]
+                    p1Left.value += p1Speed.value;
                 } else if (p1Motion.value["xAxis"]==-1) {  // 左
-                    p1Left.value -= p1Speed.value;
                     p1Frames.value = sourceFrames["left"]
+                    p1Left.value -= p1Speed.value;
                 }
 
                 if (p1Motion.value["yAxis"]==-1) {  // 上
-                    p1Top.value -= p1Speed.value;
                     p1Frames.value = sourceFrames["up"]
+                    p1Top.value -= p1Speed.value;
                 } else if (p1Motion.value["yAxis"]==1) {   // 下
-                    p1Top.value += p1Speed.value;
                     p1Frames.value = sourceFrames["down"]
+                    p1Top.value += p1Speed.value;
                 }
 
                 // 次のフレーム
