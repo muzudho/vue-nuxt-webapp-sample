@@ -11,7 +11,7 @@
 
     <h3>ホームページ内容の割合</h3>
     <v-card elevation="2" class="pa-4">
-        <canvas id="pieChart"></canvas>
+        <canvas id="pieChart" class="pieChartStyle"></canvas>
     </v-card>
 </template>
 
@@ -41,6 +41,7 @@
     ];
 
     let chart: Chart | null = null;
+
 
     // ############
     // # 開始処理 #
@@ -87,7 +88,7 @@
             options: {
                 responsive: true,
                 plugins: {
-                    legend: {
+                    legend: {   // 凡例
                         position: 'top',
                     },
                     title: {
@@ -98,10 +99,10 @@
                 onClick: (_e, elements) => {
                     if (elements.length > 0) {
                         const index = elements[0].index;
-                        console.log(`index=${index}\nroutes.length=${routes.length}\nroutes[0]=${routes[0]}\nroutes[1]=${routes[1]}\nroutes[2]=${routes[2]}\nroutes[3]=${routes[3]}`);
+                        //console.log(`index=${index}\nroutes.length=${routes.length}\nroutes[0]=${routes[0]}\nroutes[1]=${routes[1]}\nroutes[2]=${routes[2]}\nroutes[3]=${routes[3]}`);
                         // Vue Routerでページ遷移
                         const path = routes[index];
-                        console.log(`path=${path}`);
+                        //console.log(`path=${path}`);
                         router.push(path);
                     }
                 }
@@ -118,8 +119,11 @@
 </script>
 
 <style scoped>
-    canvas {
-        max-width: 400px;
+    canvas.pieChartStyle {
+        min-width: 400px;
+        min-height: 400px;
+        width: 400px;
+        height: 400px;
         margin: 0 auto;
     }
 </style>
