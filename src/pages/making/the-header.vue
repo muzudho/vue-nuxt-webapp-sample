@@ -26,9 +26,11 @@
     // ############
     // # ルーチン #
     // ############
+    
     const router = useRouter();
 
     function goToMaking() : void {
         router.push('/making');
     }
+
 </script>
