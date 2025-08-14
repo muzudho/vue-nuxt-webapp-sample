@@ -5,7 +5,7 @@
     <section class="sec-3">
         <p>👇キーボードの上下左右キーを押してくれだぜ！</p>
 
-        <div :style="boardMaskContainerStyle">
+        <div :style="boardContainerStyle">
 
             <!--
                 グリッド
@@ -156,8 +156,8 @@
         };
     });
 
-    // ボードとマスクを含んでいる領域のスタイル
-    const boardMaskContainerStyle = computed(()=>{
+    // ボードを含んでいる領域のスタイル
+    const boardContainerStyle = computed(()=>{
         const zoom = 4;
         
         return {
