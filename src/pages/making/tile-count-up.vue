@@ -116,6 +116,7 @@
     import TheFooter from './the-footer.vue';
     import TheHeader from './the-header.vue';
 
+
     // ##############
     // # 共有データ #
     // ##############
@@ -123,6 +124,7 @@
     const count = ref<number>(0);   // カウントの初期値
     const timerId = ref<number | null>(null);   // タイマーのIDを保持
     const slow = ref<number>(1);   // スローモーションの倍率の初期値
+
 
     // ####################
     // # イベントハンドラ #

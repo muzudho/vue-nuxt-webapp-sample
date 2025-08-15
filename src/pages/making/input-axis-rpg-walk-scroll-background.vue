@@ -76,7 +76,7 @@
     // ++++++++++++++++++
 
     import Tile from '@/components/Tile.vue'; // Tauri だと明示的にインポートを指定する必要がある。
-    import TileAnimation from '@/components/TileAnimation.vue'; // Tauri だと明示的にインポートを指定する必要がある。
+    import TileAnimation from '@/components/TileAnimation.vue';
     import TheFooter from './the-footer.vue';
     import TheHeader from './the-header.vue';
 

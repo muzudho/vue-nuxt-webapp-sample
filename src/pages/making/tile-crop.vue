@@ -30,8 +30,8 @@
     // + コンポーネント +
     // ++++++++++++++++++
 
-    import Tile from '../../components/Tile.vue';
     import TheFooter from './the-footer.vue';
     import TheHeader from './the-header.vue';
+    import Tile from '../../components/Tile.vue';
 
 </script>
