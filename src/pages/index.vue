@@ -8,11 +8,14 @@
 
     <h2>インデックスの章だぜ！</h2>
     <section class="sec-2">
-        ウェブ・アプリケーションのインデックス・ページだぜ（＾▽＾）！<br/>
+        ウェブ・アプリケーションのホームだぜ（＾▽＾）！<br/>
     </section>
 
-    <h3>ホームページ内容の割合</h3>
-    <canvas id="pieChart" class="pieChartStyle"></canvas>
+    <h3>このホームページの内容の気分的な割合</h3>
+    <section class="sec-3">
+        以下の円グラフをクリックするとそのページへ飛べるぜ（＾▽＾）！<br/>
+	    <canvas id="pieChart" class="pieChartStyle"></canvas>
+    </section>
 
     <br/>
     <section class="sec-1">
@@ -101,7 +104,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'ホームページ内容の割合'
+                        text: 'このホームページの内容の気分的な割合'
                     }
                 },
                 onClick: (_e, elements) => {
