@@ -96,8 +96,8 @@
         <v-img src="/img/making/timer_square.png" style="width:320px; height:192px; zoom: 4; image-rendering: pixelated;"/>
         ：ここまで。
     </section>
-    <hr/>
-    <router-link to="/making">メイキングの先頭に戻る</router-link>
+
+    <the-footer/>
 </template>
 
 <script setup lang="ts">
@@ -106,13 +106,14 @@
     // # インポート #
     // ##############
 
-    import { onMounted, ref } from 'vue';
+    import { ref } from 'vue';
 
     // ++++++++++++++++++
     // + コンポーネント +
     // ++++++++++++++++++
 
-    import TileAnimation from '../../components/TileAnimation.vue';
+    import TileAnimation from '@/components/TileAnimation.vue';
+    import TheFooter from './the-footer.vue';
     import TheHeader from './the-header.vue';
 
     // ##############
@@ -121,11 +122,7 @@
 
     const count = ref<number>(0);   // カウントの初期値
     const timerId = ref<number | null>(null);   // タイマーのIDを保持
-    const slow = ref<number>(1);   // スローモーションの倍率
-
-    onMounted(() => {
-        // コンポーネントがマウントされたときの処理
-    });
+    const slow = ref<number>(1);   // スローモーションの倍率の初期値
 
     // ####################
     // # イベントハンドラ #

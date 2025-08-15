@@ -1,4 +1,6 @@
 <template>
+    <!-- ホームに閉じるボタンはありません。 -->
+
     <section class="sec-1">
         先頭ページだぜ（＾▽＾）！<v-btn style="visibility: hidden;"></v-btn><br/>
         <!-- 他のページと縦幅を揃えるために、何の働きもしない空ボタンを置いています。 -->
@@ -11,6 +13,14 @@
 
     <h3>ホームページ内容の割合</h3>
     <canvas id="pieChart" class="pieChartStyle"></canvas>
+
+    <br/>
+    <section class="sec-1">
+        またのお越しをお待ちしておりますだぜ（＾▽＾）！<v-btn style="visibility: hidden;"></v-btn><br/>
+        <!-- 他のページと縦幅を揃えるために、何の働きもしない空ボタンを置いています。 -->
+    </section>
+
+    <!-- ホームに閉じるボタンはありません。 -->
 </template>
 
 <script setup lang="ts">

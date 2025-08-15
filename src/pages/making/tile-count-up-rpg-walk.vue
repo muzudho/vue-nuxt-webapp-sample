@@ -59,8 +59,8 @@
         <v-img src="/img/making/202508__warabenture__12--2149-kifuwarabe-o1o0.png" style="width:64px; height:128px; zoom: 4; image-rendering: pixelated;"/>
         ：ここまで。
     </section>
-    <hr/>
-    <router-link to="/making">メイキングの先頭に戻る</router-link>
+
+    <the-footer/>
 </template>
 
 <script setup lang="ts">
@@ -69,14 +69,16 @@
     // # インポート #
     // ##############
 
-    import { onMounted, ref } from 'vue';
+    import { ref } from 'vue';
 
     // ++++++++++++++++++
     // + コンポーネント +
     // ++++++++++++++++++
 
     import TileAnimation from '@/components/TileAnimation.vue';
+    import TheFooter from './the-footer.vue';
     import TheHeader from './the-header.vue';
+
 
     // ##############
     // # 共有データ #
@@ -86,9 +88,6 @@
     const timerId = ref<number | null>(null);   // タイマーのIDを保持
     const slow = ref<number>(8);   // スローモーションの倍率の初期値
 
-    onMounted(() => {
-        // コンポーネントがマウントされたときの処理
-    });
 
     // ####################
     // # イベントハンドラ #
