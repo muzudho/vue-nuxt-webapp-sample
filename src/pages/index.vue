@@ -10,9 +10,7 @@
     </section>
 
     <h3>ホームページ内容の割合</h3>
-    <v-card elevation="2" class="pa-4">
-        <canvas id="pieChart" class="pieChartStyle"></canvas>
-    </v-card>
+    <canvas id="pieChart" class="pieChartStyle"></canvas>
 </template>
 
 <script setup lang="ts">

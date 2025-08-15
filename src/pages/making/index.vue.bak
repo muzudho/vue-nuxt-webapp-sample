@@ -37,11 +37,4 @@
 
     import TheParentHeader from '../the-header.vue';
 
-
-    // ++++++++++++++++++
-    // + コンポーザブル +
-    // ++++++++++++++++++
-
-    import { getLinkHighlight } from '../../composables/link-highlight';
-
 </script>
