@@ -20,3 +20,11 @@ export default defineNuxtConfig({
     },
 })
 ```
+
+## [2025-08-19_Tue]
+
+なんかバージョンが古いみたいなんでアップデートしたい。  
+
+```shell
+pnpm info @typescript-eslint/typescript-estree
+```
