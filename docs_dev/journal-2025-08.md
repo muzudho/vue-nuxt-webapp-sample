@@ -28,3 +28,10 @@ export default defineNuxtConfig({
 ```shell
 pnpm info @typescript-eslint/typescript-estree
 ```
+
+nuxt.config.ts で、public フォルダーの相対パスが間違っていたので修正：  
+
+```
+✖ ../public
+○ ./public
+```
