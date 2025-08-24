@@ -45,11 +45,11 @@
 
     // 円グラフのための、SPA用のルートパス
     const routes = [
-        "/",                            // ホームのURL
         "/making",                      // メイキングのURL
         "/minigames",                   // ミニゲーム
         "/about",                       // ［このサイトについて］のURL
-        "/welcome-to-tauri-and-view"    // Tauri のウェルカムページ
+        "/welcome-to-tauri-and-view",   // Tauri のウェルカムページ
+        "/coding-style",                // コーディング・スタイル
     ];
 
     let chart: Chart | null = null;
@@ -79,9 +79,9 @@
         chart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['ホーム', 'メイキング', 'ミニゲーム', 'このサイトについて', 'ページ無し'],
+                labels: ['メイキング', 'ミニゲーム', 'このサイトについて', 'ページ無し', 'コーディング・スタイル'],
                 datasets: [{
-                    data: [40, 40, 15, 5],
+                    data: [40, 30, 10, 15, 5],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.8)',
                         'rgba(54, 162, 235, 0.8)',
