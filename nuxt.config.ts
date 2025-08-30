@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         //composables: 'composables', // src/composables
         pages: 'pages', // src/pages
         plugins: 'plugins', // src/plugins
-        public: './public', // /public
+        //public: './public',
+        public: '../public', // src から見て ../public
     },
 })

@@ -25,6 +25,13 @@
             v-on:countUp="(countNum) => { stopwatch1Count = countNum; }"
             style="display: none;" />
 
+        <!--
+            NOTE: Tauri と Nuxt で、ファイルパスの通し方が異なる。しかし、コードは同じにしたい。
+            ファイルパスの書き方の推奨は, src="/img/quiz/by-grok/202508__grok__30-1751-papepoKingdom-o2o0.png" だが、
+            nuxt build だとパスを見に行ってくれない。 src="../../../public/img/quiz/by-grok/202508__grok__30-1751-papepoKingdom-o2o0.png" と書くとビルドが通る？
+            nuxt.config.ts で次のように設定： dir:{public: '../public',} // src から見て ../public
+        </img>
+        -->
         <img
             src="/img/quiz/by-grok/202508__grok__30-1751-papepoKingdom-o2o0.png"
             alt="パペポ王国"
@@ -44,6 +51,8 @@
 
          <!-- キフワラニャン
             ../../../public は省いて、publicフォルダー下からのパスにすること
+            src="/img/quiz/by-grok/202508__grok__30-1229-kifuwaranyan-o2o0.png"
+            src="../../../public/img/quiz/by-grok/202508__grok__30-1229-kifuwaranyan-o2o0.png"
         -->
         <img
             src="/img/quiz/by-grok/202508__grok__30-1229-kifuwaranyan-o2o0.png"
