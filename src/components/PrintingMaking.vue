@@ -41,7 +41,7 @@
 
     // ++++++++++++++++++++++++++
     // + オブジェクト　＞　印字 +
-    // ++++++++++++++++++++++++++
+    // ++++++++++++++++++++++++**
     //
     // 盤上に表示される数字柄、絵柄など。
     //
@@ -78,17 +78,9 @@
             }
 
             const sourceTileIndex = props.printing1SourceTileIndexesBoard[printingIndex];
-            const rectangle = props.printing1SourceTilemapCoordination[sourceTileIndex];
 
             try {
-                if (rectangle) {
-                    return rectangle["left"];
-                }
-
-                // sourceTileIndex に対応するタイルがなかったとき、仕方ないので 0 を返す。
-                // 印字盤のサイズが小さくなったとき、インデックス・アクセスが範囲外エラーになる？
-                return 0;
-
+                return props.printing1SourceTilemapCoordination[sourceTileIndex]["left"];
             } catch(error) {
                 console.error(`ERROR: ${error} | printingIndex=${printingIndex}`);
                 return 0;

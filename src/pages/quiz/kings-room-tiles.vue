@@ -1180,12 +1180,6 @@ color = i % 2;
 
     const answer1IsShowing = ref<boolean>(false);
 
-    // ++++++++++++++++++++++++++++++++++++++++
-    // + オブジェクト　＞　勇者キフワラニャン +
-    // ++++++++++++++++++++++++++++++++++++++++
-
-    //const kifuwaranyan1Ref = ref<InstanceType<typeof Kifuwaranyan> | null>(null);
-
 
     // ##########
     // # 開始時 #
