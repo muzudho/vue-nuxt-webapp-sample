@@ -35,3 +35,11 @@ nuxt.config.ts で、public フォルダーの相対パスが間違っていた�
 ✖ ../public
 ○ ./public
 ```
+
+👆 これは正しかったのを間違って変えているのでは？（[2025-08-31_Sun]）  
+
+
+## [2025-08-31_Sun]
+
+`[Vue warn]: Hydration node mismatch:` みたいなエラーがでたら、 `pnpm build` し直した方がいいか？ --> 意味なかった。  
+HTML のソースが更新されていないのは分かる。  
