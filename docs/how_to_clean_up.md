@@ -3,6 +3,8 @@
 npm, pnpm の両方のバージョンアップ：  
 
 ```shell
+# Linuxの場合：
+
 sudo npm install -g npm
 # ubuntu ユーザーのパスワード入力
 
@@ -60,6 +62,8 @@ pnpm store prune
 削除するフォルダーとファイル：  
 
 ```plaintext
+# Nuxt の場合：
+
 📁 /
 ├─ 📁 .nuxt 削除
 ├─ 📁 .output 削除
@@ -80,6 +84,6 @@ pnpm build
 ## （ローカルＰＣでの）実行：  
 
 ```shell
-# （サーバーサイドにデプロイする場面では使わない）
-pnpm dev
+# ローカルＰＣ、Nuxt：
+pnpm run dev
 ```
