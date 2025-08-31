@@ -30,6 +30,7 @@ nvm --version
 # Node.JS のバージョン確認
 node -v
         v18.20.8
+        # (Windows 環境) v22.19.0
 
 nvm install 20
         v20.19.4 is already installed.
