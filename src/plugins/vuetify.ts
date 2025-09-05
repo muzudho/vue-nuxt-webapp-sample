@@ -15,7 +15,7 @@ import * as directives from "vuetify/directives";
 const myCustomLightTheme = {
     dark: false,
     colors: {
-        background: '#FFFFFF',
+        background: '#FFFFFF',  /* Tauri, Next サンプル用 */
         surface: '#FFFFFF',
         'surface-bright': '#FFFFFF',
         'surface-light': '#EEEEEE',

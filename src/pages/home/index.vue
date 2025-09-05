@@ -104,7 +104,7 @@
                         'rgb(255, 206, 86)',
                         'rgb(75, 192, 192)'
                     ],
-                    borderWidth: 2
+                    borderWidth: 2,
                 }]
             },
             options: {
@@ -115,7 +115,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'このホームページの内容の気分的な割合'
+                        text: 'ホームページ制作者のわたしが選ぶこのホームページで力を入れてる割合'
                     }
                 },
                 onClick: (_e, elements) => {

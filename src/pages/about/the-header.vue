@@ -5,10 +5,7 @@
         <v-btn @click="goBackToTopOf1" v-tooltip="'下の部を閉じる'">❌</v-btn>
     </section>
 
-    <h2>クイズだぜ！　の部</h2>
-    <section class="sec-2">
-        <v-btn @click="goBackToTopOf2" v-tooltip="'下の節を閉じる'">❌</v-btn>
-    </section>
+    <h2>このサイトについてだぜ！　の部</h2>
 </template>
 
 <script setup lang="ts">
@@ -32,14 +29,9 @@
     
     const router = useRouter();
 
-
+    
     function goBackToTopOf1() : void {
         router.push('/');
-    }
-
-
-    function goBackToTopOf2() : void {
-        router.push('/quiz');
     }
 
 </script>
