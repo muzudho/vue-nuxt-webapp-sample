@@ -200,9 +200,6 @@
             :style="perspectiveMiddle1Style"
             style="
                 position: fixed;
-                left: 0;
-                right: 0;
-                text-align: center;
             "
         >
             <!-- 盤領域 -->
@@ -808,6 +805,7 @@
             }
         }
     });
+    const oneForMask = 1;   // マスクが１マス分食み出ていることを示す定数。
 
     // ++++++++++++++++++++++++
     // + オブジェクト　＞　盤 +
@@ -829,7 +827,7 @@
             width: `${(board1FileNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareWidth}px`,
             height: `${(board1RankNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareHeight}px`,
             zoom: appZoom.value,
-            marginLeft: `${outOfSight1WithMaskSquareCount.value * board1SquareWidth}px`, /* 食み出たマスクの幅の分、右へずらす */
+            pointerEvents: 'auto',  /* 親要素がクリックの透過を設定しているはずなので、それを解除します */
         };
     });
     const getSquareStyleFromTileIndex = computed<
@@ -917,7 +915,8 @@
     // ［自機１］に紐づくホームというわけではなく、［自機のホーム］の１つです。
     //
 
-    const playerHome1File = ref<number>(2);    // ホーム
+    const playerHome1Length = 1;    // ホームポジションが１マス分の大きさであることを示す定数。
+    const playerHome1File = ref<number>(2); // ホーム
     const playerHome1Rank = ref<number>(2);
     const playerHome1Left = computed(()=>{
         return playerHome1File.value * board1SquareWidth;
@@ -999,14 +998,40 @@
     // ++++++++++++++++++++++++++++++++
 
     const perspectiveMiddle1Style = computed<CompatibleStyleValue>(()=>{
+        // マスク込みのゲーム画面サイズは、次の３つの最大のものより小さくはなりません。
+        //
+        // （１）見えていないところを含む盤サイズ＋マスクの１
+        // （２）マスク幅×２＋ホームの１
+        // （３）ホームの位置
+        const minWidthPixels = Math.max(
+            appZoom.value * (board1FileNum.value + oneForMask) * board1SquareWidth,
+            appZoom.value * (outOfSight1WithMaskSquareCount.value + playerHome1Length) * board1SquareWidth,
+            appZoom.value * (playerHome1File.value + 1) * board1SquareWidth,
+        );
+        const minHeightPixels = Math.max(
+            appZoom.value * (board1RankNum.value + oneForMask) * board1SquareHeight,
+            appZoom.value * (outOfSight1WithMaskSquareCount.value + playerHome1Length) * board1SquareHeight,
+            appZoom.value * (playerHome1Rank.value + 1) * board1SquareHeight,
+        );
+        let boardWidthPixelsWithMask = appZoom.value * (board1FileNum.value + oneForMask) * board1SquareWidth;
+        let boardHeightPixelsWithMask = appZoom.value * (board1RankNum.value + oneForMask) * board1SquareHeight;
+        if (boardWidthPixelsWithMask < minWidthPixels) {
+            boardWidthPixelsWithMask = minWidthPixels;
+        }
+        if (boardHeightPixelsWithMask < minHeightPixels) {
+            boardHeightPixelsWithMask = minHeightPixels;
+        }
+
         return {
             top: `calc(
                 100vh - ${5 * controllerSquareUnit}px -
-                ${appZoom.value * (
-                    (board1RankNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareHeight
-                )}px
+                ${boardHeightPixelsWithMask}px
             )`,
             bottom: `calc(${5 * controllerSquareUnit}px)`,
+            marginLeft: `calc(50vw - ${boardWidthPixelsWithMask / 2}px)`,
+            marginRight: `calc(50vw + ${boardWidthPixelsWithMask / 2}px)`,
+            backgroundColor: `rgba(0,0,0,0.1)`,
+            pointerEvents: 'none',  /* クリックを透過させます */
         } as CompatibleStyleValue;
     });
 
