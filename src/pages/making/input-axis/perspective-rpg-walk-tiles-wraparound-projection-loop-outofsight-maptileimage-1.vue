@@ -21,189 +21,192 @@
         :printing1SourceTilemapCoordination="printing1SourceTilemapCoordination"
         :printing1SourceTileIndexesBoard="printing1SourceTileIndexesBoard"/>
 
-    <v-container fluid class="vertical-panes-container">
-        <!-- 上段の画像エリア（固定） -->
-        <div
-            no-gutters
-            :style="{
-                position: 'fixed',
-                top: 0,
-                bottom: '67vh',
-                left: 0,
-                right: 0,
-                overflowY: 'auto', /* 内容物が収まらないならスクロールバーを出す */
-            }"
-        >
-            <the-header/>
+    <!-- ブログ領域 -->
+    <the-header/>
 
-            <!-- ブログ領域 -->
-            <h3><span class="parent-header">ＲＰＧの歩行グラフィック　＞　</span>回り込むタイルへ投影・両端つながりの像・視野外マスク例示・マップタイル画像付き</h3>
-            <section class="sec-3">
-                <br/>
+    <h3><span class="parent-header">ＲＰＧの歩行グラフィック　＞　</span>回り込むタイルへ投影・両端つながりの像・視野外マスク例示・マップタイル画像付き</h3>
+    <section class="sec-3">
+        <br/>
 
-                <!-- 免責 -->
-                <!--
-                <v-alert type="warning" title="免責！" text="処理堕ちしていたら、［設定を表示］ボタンから盤のサイズを小さくしてください。" closable />
-                <br/>
-                -->
+        <!-- 免責 -->
+        <!--
+        <v-alert type="warning" title="免責！" text="処理堕ちしていたら、［設定を表示］ボタンから盤のサイズを小さくしてください。" closable />
+        <br/>
+        -->
 
-                <talk-balloon
-                    :src="commonKifuwarabe2Src"
-                    :alt="commonKifuwarabe2Alt"
-                    :name="commonKifuwarabe2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    うわっ、狭。画面を３分割してんのか。<br/>
-                    スクロールバーを使って下まで読んでくれだぜ。<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    じゃあ１個１個説明していくかだぜ。<br/>
-                    <br/>
-                    画面の上段、つまりここは、引き続きブログになっているのでスクロールバーを下げて読んでいってくれだぜ。<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    画面の中段は、ゲーム画面を置いているぜ。<br/>
-                    クリックしても何も起こらない。<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    画面の下段は、コントローラーになっているぜ。<br/>
-                    ＰＣならクリックするか、キーボード入力を。スマホならタッチをしてくれだぜ。<br/>
-                </talk-balloon>
-            </section>
-
-            <h4>ゲーム画面説明</h4>
-            <section class="sec-4">
-                <br/>
-                <talk-balloon
-                    :src="commonHiyoko2Src"
-                    :alt="commonHiyoko2Alt"
-                    :name="commonHiyoko2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    ゲーム画面にかかっている半透明の黒いのは何なの？<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    その部分は、ゲーム画面では見えないところだと思ってくれだぜ。<br/>
-                    見えないところで隠れてなんか処理してると思ってくれだぜ。
-                </talk-balloon>
-            </section>
-
-            <h4>コントローラー説明</h4>
-            <section class="sec-4">
-                <br/>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    ［↑］［→］［↓］［←］キーで自機を上下左右に移動させるぜ。<br/>
-                    ［（スペース）］キーは、リセットボタンだな。<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonHiyoko2Src"
-                    :alt="commonHiyoko2Alt"
-                    :name="commonHiyoko2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    ［何もしないボタン］って何なの？<br/>
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    ＰＣで、例えばスライダーバーを触ったあとに自機を左右に動かそうとしたら、<br/>
-                    自機ではなくてスライダーバーのボックスが左右に動くことがある。<br/>
-                    邪魔なんで［何もしないボタン］を押すことでスライダーバーからフォーカスを外す、といった用途で使う。
-                </talk-balloon>
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    ［設定を表示］ボタンの中には、いろいろ設定が入っているので、いじってみてくれだぜ。<br/>
-                    長くなるから、あとで説明するぜ。
-                </talk-balloon>
-            </section>
-
-            <h4>裏情報</h4>
-            <section class="sec-4">
-                <br/>
-                <talk-balloon
-                    :src="commonKifuwarabe2Src"
-                    :alt="commonKifuwarabe2Alt"
-                    :name="commonKifuwarabe2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    おっと、ここで裏情報だぜ。<br/>
-                    👇 何だぜ、これは？<br/>
-                </talk-balloon>
-
-                <p>床タイルマップ：</p>
-                <v-img
-                    src="/img/making/tilemap-floor-20250826.png"
-                    :style="`width: ${8 * board1SquareWidth}px; height:${4 * board1SquareHeight}px;`"
-                    style="image-rendering: pixelated; margin:0; padding:0; border:dashed 4px gray;"/>
-                <br/>
-
-                <talk-balloon
-                    :src="commonOton2Src"
-                    :alt="commonOton2Alt"
-                    :name="commonOton2Name"
-                    :device="compatibleDevice1Ref?.device">
-                    画像ファイルだぜ。<br/>
-                    ここからタイルを切り取って、ゲーム画面へペタペタ貼り付けてるわけだな。
-                </talk-balloon>
-
-            </section>
-
-            <h4>［設定］説明</h4>
-            <section class="sec-4">
-                <br/>
-                <preferences-explanation/>
-            </section>
+        <talk-balloon
+            :src="commonKifuwarabe2Src"
+            :alt="commonKifuwarabe2Alt"
+            :name="commonKifuwarabe2Name"
+            :device="compatibleDevice1Ref?.device">
+            うわっ、狭。なんか画面をオーバーラップさせてんのか。<br/>
+            スクロールバーを使って、隙間からブログをよんでくれだぜ。<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            じゃあ１個１個説明していくかだぜ。<br/>
             <br/>
+            画面の上段、つまりここは、引き続きブログになっているのでスクロールバーを下げて読んでいってくれだぜ。<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            画面の中段は、ゲーム画面を置いているぜ。<br/>
+            クリックしても何も起こらない。<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            画面の下段は、コントローラーになっているぜ。<br/>
+            ＰＣならクリックするか、キーボード入力を。スマホならタッチをしてくれだぜ。<br/>
+        </talk-balloon>
+    </section>
 
-            <h4><span class="parent-header-lights-out">ＲＰＧの歩行グラフィック　＞　</span><span class="parent-header">回り込むタイルへ投影・両端つながりの像・視野外マスク例示・マップタイル画像付き　＞　</span>ソースコード</h4>
-            <section class="sec-4">
-                <source-link
-                    pagePath="/making/input-axis-rpg-walk-using-background-image-1"/>
-            </section>
+    <h4>ゲーム画面説明</h4>
+    <section class="sec-4">
+        <br/>
+        <talk-balloon
+            :src="commonHiyoko2Src"
+            :alt="commonHiyoko2Alt"
+            :name="commonHiyoko2Name"
+            :device="compatibleDevice1Ref?.device">
+            盤上の桃色の点線の枠は何なの？<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            自機がずっと守ってる位置と思ってくれだぜ。<br/>
+            設定によっては、自機はこの位置から離れることもできるぜ。
+        </talk-balloon>
+        <talk-balloon
+            :src="commonHiyoko2Src"
+            :alt="commonHiyoko2Alt"
+            :name="commonHiyoko2Name"
+            :device="compatibleDevice1Ref?.device">
+            ゲーム画面にかかっている半透明の黒いのは何なの？<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            その部分は、ゲーム画面では見えないところだと思ってくれだぜ。<br/>
+            見えないところで隠れてなんか処理してると思ってくれだぜ。
+        </talk-balloon>
+    </section>
 
-            <the-footer/>
-        </div>
+    <h4>コントローラー説明</h4>
+    <section class="sec-4">
+        <br/>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            ［↑］［→］［↓］［←］キーで自機を上下左右に移動させるぜ。<br/>
+            ［（スペース）］キーは、リセットボタンだな。<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonHiyoko2Src"
+            :alt="commonHiyoko2Alt"
+            :name="commonHiyoko2Name"
+            :device="compatibleDevice1Ref?.device">
+            ［何もしないボタン］って何なの？<br/>
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            ＰＣで、例えばスライダーバーを触ったあとに自機を左右に動かそうとしたら、<br/>
+            自機ではなくてスライダーバーのボックスが左右に動くことがある。<br/>
+            邪魔なんで［何もしないボタン］を押すことでスライダーバーからフォーカスを外す、といった用途で使う。
+        </talk-balloon>
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            ［設定を表示］ボタンの中には、いろいろ設定が入っているので、いじってみてくれだぜ。<br/>
+            長くなるから、あとで説明するぜ。
+        </talk-balloon>
+    </section>
+
+    <h4>裏情報</h4>
+    <section class="sec-4">
+        <br/>
+        <talk-balloon
+            :src="commonKifuwarabe2Src"
+            :alt="commonKifuwarabe2Alt"
+            :name="commonKifuwarabe2Name"
+            :device="compatibleDevice1Ref?.device">
+            おっと、ここで裏情報だぜ。<br/>
+            👇 何だぜ、これは？<br/>
+        </talk-balloon>
+
+        <p>床タイルマップ：</p>
+        <v-img
+            src="/img/making/tilemap-floor-20250826.png"
+            :style="`width: ${8 * board1SquareWidth}px; height:${4 * board1SquareHeight}px;`"
+            style="image-rendering: pixelated; margin:0; padding:0; border:dashed 4px gray;"/>
+        <br/>
+
+        <talk-balloon
+            :src="commonOton2Src"
+            :alt="commonOton2Alt"
+            :name="commonOton2Name"
+            :device="compatibleDevice1Ref?.device">
+            画像ファイルだぜ。<br/>
+            ここからタイルを切り取って、ゲーム画面へペタペタ貼り付けてるわけだな。
+        </talk-balloon>
+
+    </section>
+
+    <h4>［設定］説明</h4>
+    <section class="sec-4">
+        <br/>
+        <preferences-explanation/>
+    </section>
+    <br/>
+
+    <h4><span class="parent-header-lights-out">ＲＰＧの歩行グラフィック　＞　</span><span class="parent-header">回り込むタイルへ投影・両端つながりの像・視野外マスク例示・マップタイル画像付き　＞　</span>ソースコード</h4>
+    <section class="sec-4">
+        <source-link
+            pagePath="/making/input-axis-rpg-walk-using-background-image-1"/>
+    </section>
+
+    <the-footer/>
+
+    <!-- オーバーラップ画面 -->
+    <v-container fluid class="vertical-panes-container">
 
         <!-- 中段の画像エリア（固定） -->
         <div
-            :style="{
-                position: 'fixed',
-                top: '33vh',
-                bottom: `calc(${5 * controllerSquareUnit}px)`,
-                left: 0,
-                right: 0,
-                overflowY: 'auto', /* 内容物が収まらないならスクロールバーを出す */
-            }"
+            :style="perspectiveMiddle1Style"
             style="
-                background-color: skyblue;
+                position: fixed;
+                left: 0;
+                right: 0;
+                text-align: center;
             "
         >
-
             <!-- 盤領域 -->
             <div
                 class="board"
-                :style="board1Style">
+                :style="board1Style"
+                style="
+                    display: inline-block;  /* インライン化しておくと、センタリングできる */
+                "
+                >
 
                 <!-- 自機のホーム１ -->
                 <div
@@ -313,150 +316,156 @@
                     :board1SquareWidth="board1SquareWidth"
                     :board1SquareHeight="board1SquareHeight"
                     :board1FileNum="board1FileNum"
-                    :board1RankNum="board1RankNum">
-                </out-of-sight-making>
-            </div>
-
-            <div style="z-index: 10;">
-                印字x={{ printing1Left }}　｜　人x={{ player1Left }}　｜　人モーション・ウェイト={{ player1MotionWait }}<br/>
-                印字y={{ printing1Top  }}　｜　人y={{ player1Top  }}<br/>
-                人 スペース={{ player1Input[" "] }}　｜　↑={{ player1Input.ArrowLeft }}　｜　↑={{ player1Input.ArrowUp }}　｜　→={{ player1Input.ArrowRight }}　｜　↓={{ player1Input.ArrowDown }}<br/>
-                印字 右へ回り込み={{ printing1Motion.wrapAroundRight }}　｜　下へ回り込み={{ printing1Motion.wrapAroundBottom }}<br/>
-                outOfSight1WithMaskSizeSquare={{ outOfSight1WithMaskSizeSquare }}<br/>
+                    :board1RankNum="board1RankNum" />
             </div>
         </div>
 
         <!-- 下段：　ソフトウェア・キーボード、兼・操作説明 -->
         <div
             :style="{
-                position: 'fixed',
                 top: `calc(100vh - ${5 * controllerSquareUnit}px)`,
-                bottom: 0,
-                left: 0,
-                right: 0,
-                overflowY: 'auto', /* 内容物が収まらないならスクロールバーを出す */
             }"
+            style="
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                overflow-y: auto; /* 内容物が収まらないならスクロールバーを出す */
+                color: white;
+                background-color: rgba(0,0,0,0.5);
+            "
         >
-            <!-- ボタン絶対位置領域 -->
+            <!-- ボタン・センタリング用コンテナー -->
             <div
-                :style="{
-                    top: `${0 * controllerSquareUnit}px`,
-                    left: `${0 * controllerSquareUnit}px`,
-                    width: `${10 * controllerSquareUnit}px`,
-                    height: `${3 * controllerSquareUnit}px`,
-                }"
+                style="
+                    position: relative;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                "
             >
-                <!-- 十字キー -->
-                <v-btn
-                    class="code-key"
-                    :style="`
-                        top: ${0 * controllerSquareUnit}px;
-                        left: ${2 * controllerSquareUnit}px;
-                        width: ${3 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    @touchstart.prevent="button1Ref?.press($event, onUpButtonPressed, {repeat: true});"
-                    @touchend="button1Ref?.release(onUpButtonReleased);"
-                    @touchcancel="button1Ref?.release(onUpButtonReleased);"
-                    @touchleave="button1Ref?.release(onUpButtonReleased);"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onUpButtonPressed, {repeat: true})"
-                    @mouseup="button1Ref?.release(onUpButtonReleased);"
-                    @mouseleave="button1Ref?.release(onUpButtonReleased);"
-                    v-tooltip="'自機を上へ、像を逆向きへ動かすぜ！'"
-                >↑</v-btn>
+                <div
+                    :style="{
+                        width: `${15 * controllerSquareUnit}px`,
+                        height: `${3 * controllerSquareUnit}px`,
+                    }"
+                    style="
+                        position: relative;
+                        display: inline-block;
+                    "
+                >
+                    <!-- 十字キー -->
+                    <v-btn
+                        class="code-key"
+                        :style="`
+                            top: ${0 * controllerSquareUnit}px;
+                            left: ${2 * controllerSquareUnit}px;
+                            width: ${3 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        @touchstart.prevent="button1Ref?.press($event, onUpButtonPressed, {repeat: true});"
+                        @touchend="button1Ref?.release(onUpButtonReleased);"
+                        @touchcancel="button1Ref?.release(onUpButtonReleased);"
+                        @touchleave="button1Ref?.release(onUpButtonReleased);"
+                        @mousedown.prevent="button1Ref?.handleMouseDown($event, onUpButtonPressed, {repeat: true})"
+                        @mouseup="button1Ref?.release(onUpButtonReleased);"
+                        @mouseleave="button1Ref?.release(onUpButtonReleased);"
+                        v-tooltip="'自機を上へ、像を逆向きへ動かすぜ！'"
+                    >↑</v-btn>
 
-                <v-btn
-                    class="code-key"
-                    :style="`
-                        top: ${1 * controllerSquareUnit}px;
-                        left: ${0 * controllerSquareUnit}px;
-                        width: ${3 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    @touchstart.prevent="button1Ref?.press($event, onLeftButtonPressed, {repeat: true});"
-                    @touchend="button1Ref?.release(onLeftButtonReleased);"
-                    @touchcancel="button1Ref?.release(onLeftButtonReleased);"
-                    @touchleave="button1Ref?.release(onLeftButtonReleased);"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onLeftButtonPressed, {repeat: true})"
-                    @mouseup="button1Ref?.release(onLeftButtonReleased);"
-                    @mouseleave="button1Ref?.release(onLeftButtonReleased);"
-                    v-tooltip="'自機を左へ、像を逆向きへ動かすぜ！'"
-                >←</v-btn>
+                    <v-btn
+                        class="code-key"
+                        :style="`
+                            top: ${1 * controllerSquareUnit}px;
+                            left: ${0 * controllerSquareUnit}px;
+                            width: ${3 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        @touchstart.prevent="button1Ref?.press($event, onLeftButtonPressed, {repeat: true});"
+                        @touchend="button1Ref?.release(onLeftButtonReleased);"
+                        @touchcancel="button1Ref?.release(onLeftButtonReleased);"
+                        @touchleave="button1Ref?.release(onLeftButtonReleased);"
+                        @mousedown.prevent="button1Ref?.handleMouseDown($event, onLeftButtonPressed, {repeat: true})"
+                        @mouseup="button1Ref?.release(onLeftButtonReleased);"
+                        @mouseleave="button1Ref?.release(onLeftButtonReleased);"
+                        v-tooltip="'自機を左へ、像を逆向きへ動かすぜ！'"
+                    >←</v-btn>
 
-                <v-btn
-                    class="code-key"
-                    :style="`
-                        top: ${1 * controllerSquareUnit}px;
-                        left: ${4 * controllerSquareUnit}px;
-                        width: ${3 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    @touchstart.prevent="button1Ref?.press($event, onRightButtonPressed, {repeat: true});"
-                    @touchend="button1Ref?.release(onRightButtonReleased);"
-                    @touchcancel="button1Ref?.release(onRightButtonReleased);"
-                    @touchleave="button1Ref?.release(onRightButtonReleased);"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onRightButtonPressed, {repeat: true})"
-                    @mouseup="button1Ref?.release(onRightButtonReleased);"
-                    @mouseleave="button1Ref?.release(onRightButtonReleased);"
-                    v-tooltip="'自機を右へ、像を逆向きへ動かすぜ！'"
-                >→</v-btn>
+                    <v-btn
+                        class="code-key"
+                        :style="`
+                            top: ${1 * controllerSquareUnit}px;
+                            left: ${4 * controllerSquareUnit}px;
+                            width: ${3 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        @touchstart.prevent="button1Ref?.press($event, onRightButtonPressed, {repeat: true});"
+                        @touchend="button1Ref?.release(onRightButtonReleased);"
+                        @touchcancel="button1Ref?.release(onRightButtonReleased);"
+                        @touchleave="button1Ref?.release(onRightButtonReleased);"
+                        @mousedown.prevent="button1Ref?.handleMouseDown($event, onRightButtonPressed, {repeat: true})"
+                        @mouseup="button1Ref?.release(onRightButtonReleased);"
+                        @mouseleave="button1Ref?.release(onRightButtonReleased);"
+                        v-tooltip="'自機を右へ、像を逆向きへ動かすぜ！'"
+                    >→</v-btn>
 
-                <v-btn class="code-key hidden"/>
-                <v-btn
-                    class="code-key"
-                    :style="`
-                        top: ${2 * controllerSquareUnit}px;
-                        left: ${2 * controllerSquareUnit}px;
-                        width: ${3 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    @touchstart.prevent="button1Ref?.press($event, onDownButtonPressed, {repeat: true});"
-                    @touchend="button1Ref?.release(onDownButtonReleased);"
-                    @touchcancel="button1Ref?.release(onDownButtonReleased);"
-                    @touchleave="button1Ref?.release(onDownButtonReleased);"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onDownButtonPressed, {repeat: true})"
-                    @mouseup="button1Ref?.release(onDownButtonReleased);"
-                    @mouseleave="button1Ref?.release(onDownButtonReleased);"
-                    v-tooltip="'自機を下へ、像を逆向きへ動かすぜ！'"
-                >↓</v-btn>
+                    <v-btn class="code-key hidden"/>
+                    <v-btn
+                        class="code-key"
+                        :style="`
+                            top: ${2 * controllerSquareUnit}px;
+                            left: ${2 * controllerSquareUnit}px;
+                            width: ${3 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        @touchstart.prevent="button1Ref?.press($event, onDownButtonPressed, {repeat: true});"
+                        @touchend="button1Ref?.release(onDownButtonReleased);"
+                        @touchcancel="button1Ref?.release(onDownButtonReleased);"
+                        @touchleave="button1Ref?.release(onDownButtonReleased);"
+                        @mousedown.prevent="button1Ref?.handleMouseDown($event, onDownButtonPressed, {repeat: true})"
+                        @mouseup="button1Ref?.release(onDownButtonReleased);"
+                        @mouseleave="button1Ref?.release(onDownButtonReleased);"
+                        v-tooltip="'自機を下へ、像を逆向きへ動かすぜ！'"
+                    >↓</v-btn>
 
-                <!-- スペース・キー -->
-                <v-btn
-                    class="code-key"
-                    :style="`
-                        top: ${2 * controllerSquareUnit}px;
-                        left: ${8 * controllerSquareUnit}px;
-                        width: ${3 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    @touchstart.prevent="button1Ref?.press($event, onSpaceButtonPressed, {repeat: true});"
-                    @touchend="button1Ref?.release(onSpaceButtonReleased);"
-                    @touchcancel="button1Ref?.release(onSpaceButtonReleased);"
-                    @touchleave="button1Ref?.release(onSpaceButtonReleased);"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onSpaceButtonPressed, {repeat: true})"
-                    @mouseup="button1Ref?.release(onSpaceButtonReleased);"
-                    @mouseleave="button1Ref?.release(onSpaceButtonReleased);"
-                    v-tooltip="'自機、印字の位置を最初に有ったところに戻すぜ。'"
-                >（スペース）</v-btn>
+                    <!-- スペース・キー -->
+                    <v-btn
+                        class="code-key"
+                        :style="`
+                            top: ${2 * controllerSquareUnit}px;
+                            left: ${8 * controllerSquareUnit}px;
+                            width: ${3 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        @touchstart.prevent="button1Ref?.press($event, onSpaceButtonPressed, {repeat: true});"
+                        @touchend="button1Ref?.release(onSpaceButtonReleased);"
+                        @touchcancel="button1Ref?.release(onSpaceButtonReleased);"
+                        @touchleave="button1Ref?.release(onSpaceButtonReleased);"
+                        @mousedown.prevent="button1Ref?.handleMouseDown($event, onSpaceButtonPressed, {repeat: true})"
+                        @mouseup="button1Ref?.release(onSpaceButtonReleased);"
+                        @mouseleave="button1Ref?.release(onSpaceButtonReleased);"
+                        v-tooltip="'自機、印字の位置を最初に有ったところに戻すぜ。'"
+                    >（スペース）</v-btn>
 
-                <!-- フォーカスを外すためのダミー・ボタンです -->
-                <v-btn
-                    class="noop-key"
-                    :style="`
-                        top: ${2 * controllerSquareUnit}px;
-                        left: ${11 * controllerSquareUnit}px;
-                        width: ${4 * controllerSquareUnit - 4}px;
-                        height: ${1 * controllerSquareUnit - 4}px;
-                    `"
-                    style="position: absolute;"
-                    ref="noopButton"
-                    v-tooltip="'PCでのマウス操作で、フォーカスがコントロールに残って邪魔になるときは、このボタンを押してくれだぜ'"
-                >何もしないボタン</v-btn>
+                    <!-- フォーカスを外すためのダミー・ボタンです -->
+                    <v-btn
+                        class="noop-key"
+                        :style="`
+                            top: ${2 * controllerSquareUnit}px;
+                            left: ${11 * controllerSquareUnit}px;
+                            width: ${4 * controllerSquareUnit - 4}px;
+                            height: ${1 * controllerSquareUnit - 4}px;
+                        `"
+                        style="position: absolute;"
+                        ref="noopButton"
+                        v-tooltip="'PCでのマウス操作で、フォーカスがコントロールに残って邪魔になるときは、このボタンを押してくれだぜ'"
+                    >何もしないボタン</v-btn>
+                </div>
             </div>
             
             <!-- ボタン相対位置領域 -->
@@ -482,7 +491,7 @@
                     v-model="appZoom"
                     :min="0.5"
                     :max="4"
-                    step="0.5"
+                    step="0.25"
                     showTicks="always"
                     thumbLabel="always" />
                 <v-slider
@@ -529,7 +538,7 @@
                 <p>マスク枠の幅。右側と下側は、１マス多めに付きます：</p>
                 <v-slider
                     label="マスク枠の幅"
-                    v-model="outOfSight1WithMaskSizeSquare"
+                    v-model="outOfSight1WithMaskSquareCount"
                     :min="0"
                     :max="2"
                     step="1"
@@ -577,6 +586,20 @@
             >{{ debugInfo1IsShowing ? '⚙️デバッグ情報を終わる' : '⚙️デバッグ情報を表示' }}</v-btn>
             <section v-if="debugInfo1IsShowing" class="sec-1">
                 <br/>
+
+                <div style="z-index: 10;">
+                    印字x={{ printing1Left }}　｜　人x={{ player1Left }}　｜　人モーション・ウェイト={{ player1MotionWait }}<br/>
+                    印字y={{ printing1Top  }}　｜　人y={{ player1Top  }}<br/>
+                    人 スペース={{ player1Input[" "] }}　｜　↑={{ player1Input.ArrowLeft }}　｜　↑={{ player1Input.ArrowUp }}　｜　→={{ player1Input.ArrowRight }}　｜　↓={{ player1Input.ArrowDown }}<br/>
+                    印字 右へ回り込み={{ printing1Motion.wrapAroundRight }}　｜　下へ回り込み={{ printing1Motion.wrapAroundBottom }}<br/>
+                    outOfSight1WithMaskSquareCount={{ outOfSight1WithMaskSquareCount }}<br/>
+                </div>
+                <br/>
+
+                <p>
+                    controllerSquareUnit: {{ controllerSquareUnit }}<br/>
+                </p>
+
                 <p>👇 盤の各マス</p>
                 <div
                     v-for="i in board1Area"
@@ -722,7 +745,7 @@
     // 今動いているアプリケーションの状態を記録しているデータ。特に可変のもの。
     //
 
-    const appZoom = ref<number>(3);    // ズーム
+    const appZoom = ref<number>(2);   // ズーム
 
 
     // ################
@@ -771,11 +794,11 @@
     // ++++++++++++++++++++++++++++++++
 
     const outOfSight1Ref = ref<InstanceType<typeof OutOfSightMaking> | null>(null);
-    const outOfSight1WithMaskSizeSquare = computed({
-        get: () => outOfSight1Ref.value?.outOfSight1WithMaskSizeSquare ?? 0, // nullの場合はデフォルト値（例: 0）
+    const outOfSight1WithMaskSquareCount = computed({
+        get: () => outOfSight1Ref.value?.outOfSight1WithMaskSquareCount ?? 0, // nullの場合はデフォルト値（例: 0）
         set: (value) => {
             if (outOfSight1Ref.value) {
-                outOfSight1Ref.value.outOfSight1WithMaskSizeSquare = value; // appleを更新
+                outOfSight1Ref.value.outOfSight1WithMaskSquareCount = value; // appleを更新
             }
         }
     });
@@ -797,9 +820,10 @@
     const board1WithMaskSizeSquare = ref<number>(1);    // マスクの幅（単位：マス）
     const board1Style = computed<CompatibleStyleValue>(()=>{    // ボードとマスクを含んでいる領域のスタイル
         return {
-            width: `${(board1FileNum.value + outOfSight1WithMaskSizeSquare.value) * board1SquareWidth}px`,
-            height: `${(board1RankNum.value + outOfSight1WithMaskSizeSquare.value) * board1SquareHeight}px`,
+            width: `${(board1FileNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareWidth}px`,
+            height: `${(board1RankNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareHeight}px`,
             zoom: appZoom.value,
+            marginLeft: `${outOfSight1WithMaskSquareCount.value * board1SquareWidth}px`, /* 食み出たマスクの幅の分、右へずらす */
         };
     });
     const getSquareStyleFromTileIndex = computed<
@@ -846,14 +870,6 @@
     //
 
     const printing1Ref = ref<InstanceType<typeof PrintingMaking> | null>(null);
-    // const outOfSight1WithMaskSizeSquare = computed({
-    //     get: () => outOfSight1Ref.value?.outOfSight1WithMaskSizeSquare ?? 0, // nullの場合はデフォルト値（例: 0）
-    //     set: (value) => {
-    //         if (outOfSight1Ref.value) {
-    //             outOfSight1Ref.value.outOfSight1WithMaskSizeSquare = value; // appleを更新
-    //         }
-    //     }
-    // });
     const printing1OutOfSightIsLock = ref<boolean>(false);   // ［画面外隠し］を管理（true: ロックする, false: ロックしない）
     watch(printing1OutOfSightIsLock, (newValue: boolean)=>{
         player1CanBoardEdgeWalkingIsEnabled.value = newValue;
@@ -972,12 +988,28 @@
     const player1CanBoardEdgeWalking = ref<boolean>(false); // ［盤の端の歩行］可能状態を管理（true: 可能にする, false: 可能にしない）
     const player1CanBoardEdgeWalkingIsEnabled = ref<boolean>(false);    // ［盤の端の歩行］可能状態の活性性を管理（true: 不活性にする, false: 活性にする）
 
-    
+    // ++++++++++++++++++++++++++++++++
+    // + オブジェクト　＞　画面中段１ +
+    // ++++++++++++++++++++++++++++++++
+
+    const perspectiveMiddle1Style = computed<CompatibleStyleValue>(()=>{
+        return {
+            top: `calc(
+                100vh - ${5 * controllerSquareUnit}px -
+                ${appZoom.value * (
+                    (board1RankNum.value + outOfSight1WithMaskSquareCount.value) * board1SquareHeight
+                )}px
+            )`,
+            bottom: `calc(${5 * controllerSquareUnit}px)`,
+        } as CompatibleStyleValue;
+    });
+
     // ##########
     // # 開始時 #
     // ##########
 
     onMounted(() => {
+        // window オブジェクトはブラウザー専用。サーバー側ではプリレンダリングできないので、マウント後に書く。
         // キーボードイベント
         window.addEventListener('keydown', (e: KeyboardEvent) => {
             // ［↑］［↓］キーの場合
@@ -1047,7 +1079,7 @@
                 board1SquareHeight,
                 board1FileNum.value,
                 board1RankNum.value,
-                outOfSight1WithMaskSizeSquare.value,
+                outOfSight1WithMaskSquareCount.value,
                 printing1FileNum.value,
                 printing1RankNum.value,
                 printing1Left.value,
@@ -1066,7 +1098,7 @@
                 board1SquareHeight,
                 board1FileNum.value,
                 board1RankNum.value,
-                outOfSight1Ref.value?.outOfSight1WithMaskSizeSquare ?? 1,
+                outOfSight1Ref.value?.outOfSight1WithMaskSquareCount ?? 1,
                 playerHome1File.value,
                 playerHome1Rank.value,
                 player1Left.value,
