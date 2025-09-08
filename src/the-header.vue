@@ -13,7 +13,7 @@
         <router-link to="/blog">ブログ</router-link> |
         <router-link to="/minigames">ミニゲーム</router-link> |
         <router-link to="/making">メイキング</router-link> |
-        <router-link to="/coding-styles">コーディング・スタイル</router-link>
+        <router-link to="/coding-style">コーディング・スタイル</router-link>
     </nav>
 
     <h1>Nuxt ウェブアプリのサンプルだぜ！</h1>
