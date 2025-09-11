@@ -39,7 +39,7 @@
 
     // 円グラフのための、SPA用のルートパス
     const routes = [
-        "/making",                      // メイキングのURL
+        "/reference/making",                      // メイキングのURL
         "/minigames",                   // ミニゲーム
         "/about",                       // ［このサイトについて］のURL
         "/welcome-to-tauri-and-vue",    // Tauri のウェルカムページ
@@ -62,6 +62,7 @@
     // ++++++++++++++++++++++++++++++
 
     let chart: Chart | null = null;
+
 
     function clientsideChartInit() {
         // window オブジェクトはブラウザー専用。サーバー側ではプリレンダリングできないので、マウント後に書く。
