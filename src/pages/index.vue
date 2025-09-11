@@ -17,6 +17,6 @@
     // + コンポーネント +
     // ++++++++++++++++++
 
-    import HomeIndex from './home/the-part-body.vue';
+    import HomeIndex from './home/index.vue';
 
 </script>
