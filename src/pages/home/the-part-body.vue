@@ -1,16 +1,12 @@
 <template>
-    <section class="sec-2">
-        ウェブ・アプリケーションのホームだぜ（＾▽＾）！<br/>
-    </section>
-
-    <h3>ホームページ制作者のわたしが選ぶこのホームページで力を入れてる割合</h3>
-    <section class="sec-3">
+    <h1>ホームページ制作者のわたしが選ぶこのホームページで力を入れてる割合</h1>
+    <section class="sec-1 pt-6">
         以下の円グラフをクリックするとそのページへ飛べるぜ（＾▽＾）！<br/>
 	    <canvas id="pieChart" class="pieChartStyle"></canvas>
     </section>
 
     <br/>
-    <section class="sec-1">
+    <section class="sec-0">
         またのお越しをお待ちしておりますだぜ（＾▽＾）！<v-btn style="visibility: hidden;"></v-btn><br/>
         <!-- 他のページと縦幅を揃えるために、何の働きもしない空ボタンを置いています。 -->
     </section>
@@ -77,7 +73,7 @@
         chart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['メイキング', 'ミニゲーム', 'このサイトについて', 'ページ無し', 'コーディング・スタイル'],
+                labels: ['メイキング', 'ミニゲーム', 'このサイトについて', 'Tauriウェルカムページ', 'コーディング・スタイル'],
                 datasets: [{
                     data: [40, 30, 10, 15, 5],
                     backgroundColor: [
