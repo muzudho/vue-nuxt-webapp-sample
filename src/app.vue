@@ -11,6 +11,16 @@
 <template>
     <v-app>
         <v-app-bar app density="compact">
+            <!--
+                <img
+                    src="@/assets/img/reference/application/202509__warabenture__12-1833-logo-since20220507.png"
+                    class="ml-2"
+                    style="
+                        width: 32px;
+                        height: 32px;
+                    "
+                />            
+            -->
             <v-toolbar-title style="display: inline;">ウェブアプリ</v-toolbar-title>
         </v-app-bar>
         <v-main>

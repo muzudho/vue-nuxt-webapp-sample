@@ -14,6 +14,7 @@
         <router-link to="/quiz" :style="getLinkHighlight('/quiz')">クイズ</router-link> |
         <router-link to="/minigames" :style="getLinkHighlight('/minigames')">ミニゲーム</router-link> |
         <router-link to="/reference" :style="getLinkHighlight('/reference')">リファレンス</router-link>
+
     </nav>
 </template>
 
