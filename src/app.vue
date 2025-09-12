@@ -10,6 +10,9 @@
 
 <template>
     <v-app>
+        <v-app-bar app density="compact">
+            <v-toolbar-title style="display: inline;">ウェブアプリ</v-toolbar-title>
+        </v-app-bar>
         <v-main>
 
             <!-- Nuxt + Vue ウェブアプリ用：
