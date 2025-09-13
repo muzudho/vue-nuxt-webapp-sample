@@ -93,7 +93,7 @@ span.parent-header-lights-out {
  */
 @media screen and (max-width: 768px) {
     h1 {
-        margin-left: calc(1 * 20px);
+        margin-left: calc(0 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -104,7 +104,7 @@ span.parent-header-lights-out {
     }
 
     h2 {
-        margin-left: calc(2 * 20px);
+        margin-left: calc(1 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -115,7 +115,7 @@ span.parent-header-lights-out {
     }
 
     h3 {
-        margin-left: calc(3 * 20px);
+        margin-left: calc(2 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -126,7 +126,7 @@ span.parent-header-lights-out {
     }
 
     h4 {
-        margin-left: calc(4 * 20px);
+        margin-left: calc(3 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -137,7 +137,7 @@ span.parent-header-lights-out {
     }
 
     h5 {
-        margin-left: calc(5 * 20px);
+        margin-left: calc(4 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -148,7 +148,7 @@ span.parent-header-lights-out {
     }
 
     h6 {
-        margin-left: calc(6 * 20px);
+        margin-left: calc(5 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -159,7 +159,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-1 {
-        margin-left: calc(1 * 20px);
+        margin-left: calc(0 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -169,7 +169,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-2 {
-        margin-left: calc(2 * 20px);
+        margin-left: calc(1 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -179,7 +179,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-3 {
-        margin-left: calc(3 * 20px);
+        margin-left: calc(2 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -189,7 +189,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-4 {
-        margin-left: calc(4 * 20px);
+        margin-left: calc(3 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -199,7 +199,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-5 {
-        margin-left: calc(5 * 20px);
+        margin-left: calc(4 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -209,7 +209,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-6 {
-        margin-left: calc(6 * 20px);
+        margin-left: calc(5 * 20px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -219,31 +219,31 @@ span.parent-header-lights-out {
     }
 
     section.sec-0 {
-        margin-left: calc(1 * 20px + 4px);
+        margin-left: calc(0 * 20px + 4px);
     }
 
     section.sec-1 {
-        margin-left: calc(2 * 20px + 4px);
+        margin-left: calc(1 * 20px + 4px);
     }
 
     section.sec-2 {
-        margin-left: calc(3 * 20px + 4px);
+        margin-left: calc(2 * 20px + 4px);
     }
 
     section.sec-3 {
-        margin-left: calc(4 * 20px + 4px);
+        margin-left: calc(3 * 20px + 4px);
     }
 
     section.sec-4 {
-        margin-left: calc(5 * 20px + 4px);
+        margin-left: calc(4 * 20px + 4px);
     }
 
     section.sec-5 {
-        margin-left: calc(6 * 20px + 4px);
+        margin-left: calc(5 * 20px + 4px);
     }
 
     section.sec-6 {
-        margin-left: calc(7 * 20px + 4px);
+        margin-left: calc(6 * 20px + 4px);
     }
 
     .sec-0 img {
@@ -307,7 +307,7 @@ span.parent-header-lights-out {
 /* パソコン向けスタイル (画面幅が769px以上) */
 @media screen and (min-width: 769px) {
     h1 {
-        margin-left: calc(1 * 60px);
+        margin-left: calc(0 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -318,7 +318,7 @@ span.parent-header-lights-out {
     }
 
     h2 {
-        margin-left: calc(2 * 60px);
+        margin-left: calc(1 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -329,7 +329,7 @@ span.parent-header-lights-out {
     }
 
     h3 {
-        margin-left: calc(3 * 60px);
+        margin-left: calc(2 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -340,7 +340,7 @@ span.parent-header-lights-out {
     }
 
     h4{
-        margin-left: calc(4 * 60px);
+        margin-left: calc(3 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -351,7 +351,7 @@ span.parent-header-lights-out {
     }
 
     h5 {
-        margin-left: calc(5 * 60px);
+        margin-left: calc(4 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -362,7 +362,7 @@ span.parent-header-lights-out {
     }
 
     h6 {
-        margin-left: calc(6 * 60px);
+        margin-left: calc(5 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -373,7 +373,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-1 {
-        margin-left: calc(1 * 60px);
+        margin-left: calc(0 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -383,7 +383,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-2 {
-        margin-left: calc(2 * 60px);
+        margin-left: calc(1 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -393,7 +393,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-3 {
-        margin-left: calc(3 * 60px);
+        margin-left: calc(2 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -403,7 +403,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-4{
-        margin-left: calc(4 * 60px);
+        margin-left: calc(3 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -413,7 +413,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-5 {
-        margin-left: calc(5 * 60px);
+        margin-left: calc(4 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -423,7 +423,7 @@ span.parent-header-lights-out {
     }
 
     div.contents-header-6 {
-        margin-left: calc(6 * 60px);
+        margin-left: calc(5 * 60px);
         padding-left: 4px;
         padding-top: 6px;
         padding-bottom: 2px;
@@ -433,31 +433,31 @@ span.parent-header-lights-out {
     }
 
     section.sec-0 {
-        margin-left: calc(1 * 60px + 4px);
+        margin-left: calc(0 * 60px + 4px);
     }
 
     section.sec-1 {
-        margin-left: calc(2 * 60px + 4px);
+        margin-left: calc(1 * 60px + 4px);
     }
 
     section.sec-2 {
-        margin-left: calc(3 * 60px + 4px);
+        margin-left: calc(2 * 60px + 4px);
     }
 
     section.sec-3 {
-        margin-left: calc(4 * 60px + 4px);
+        margin-left: calc(3 * 60px + 4px);
     }
 
     section.sec-4 {
-        margin-left: calc(5 * 60px + 4px);
+        margin-left: calc(4 * 60px + 4px);
     }
 
     section.sec-5 {
-        margin-left: calc(6 * 60px + 4px);
+        margin-left: calc(5 * 60px + 4px);
     }
 
     section.sec-6 {
-        margin-left: calc(7 * 60px + 4px);
+        margin-left: calc(6 * 60px + 4px);
     }
 
     .sec-0 img {
