@@ -10,7 +10,7 @@
 
 <template>
     <v-app>
-        <v-app-bar app density="compact">
+        <v-app-bar app fixed density="compact">
             <!--
                 <img
                     src="@/assets/img/reference/application/202509__warabenture__12-1833-logo-since20220507.png"
@@ -19,11 +19,15 @@
                         width: 32px;
                         height: 32px;
                     "
-                />            
+                />
             -->
             <v-toolbar-title style="display: inline;">ウェブアプリ</v-toolbar-title>
         </v-app-bar>
-        <v-main>
+
+        <!--
+            `id="top"` - #top を使って画面上部に飛ぶリンクを作るのに使う。
+        -->
+        <v-main id="top">
 
             <!-- Nuxt + Vue ウェブアプリ用：
                 <v-container> は：
