@@ -13,7 +13,8 @@
         <router-link to="/blog" :class="getLinkHighlight('/blog')">ブログ</router-link> |
         <router-link to="/quiz" :class="getLinkHighlight('/quiz')">クイズ</router-link> |
         <router-link to="/minigames" :class="getLinkHighlight('/minigames')">ミニゲーム</router-link> |
-        <router-link to="/reference" :class="getLinkHighlight('/reference')">リファレンス</router-link>
+        <router-link to="/reference" :class="getLinkHighlight('/reference')">リファレンス</router-link> | 
+        <router-link to="/reference_desktopapp_webapp/experimental" :class="getLinkHighlight('/reference_desktopapp_webapp/experimental')">エクスペリメンタル</router-link>
 
     </nav>
 </template>
