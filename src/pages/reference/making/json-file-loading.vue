@@ -137,7 +137,7 @@
     } = <span class="red-marker">await useFetch</span>&lt;any&gt;(
         '{{ jsonFilePathPublic }}',   // public フォルダー下のファイルへのパス
         {
-            baseURL: '/',   // ？
+            baseURL: '/',   // ここは開発環境なら例えば "http://localhost:3000/" 、本番環境なら例えば "https://www.warabenture.com/" といった風に入れてください
             transform: (jsonObj: unknown): any => {    // やりたければ、データの変換処理
 
                 // JSON がオブジェクト（辞書型）かどうかのチェック
@@ -456,7 +456,7 @@ export default defineNuxtConfig({
     } = await useFetch<any>(
         jsonFilePathPublic, // public フォルダー下のファイルへのパス
         {
-            baseURL: '/',   // ？
+            baseURL: '/',   // ここは開発環境なら例えば "http://localhost:3000/" 、本番環境なら例えば "https://www.warabenture.com/" といった風に入れてください
             transform: (jsonObj: unknown): any => {    // やりたければ、データの変換処理
 
                 // JSON がオブジェクト（辞書型）かどうかのチェック
