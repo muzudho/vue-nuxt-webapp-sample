@@ -96,8 +96,9 @@
                 left: '0px',
                 top: '0px',
             }"
-            :screenWidth="appZoom * (board1FileNum - 2 * board1WithMaskFrSize) * tileBoard1TileWidth"
-            :screenHeight="appZoom * (board1RankNum - 2 * board1WithMaskFrSize) * tileBoard1TileHeight"
+            :screenWidth="gameMachine1Zoom * (board1FileNum - 2 * board1WithMaskFrSize) * tileBoard1TileWidth"
+            :screenHeight="gameMachine1Zoom * (board1RankNum - 2 * board1WithMaskFrSize) * tileBoard1TileHeight"
+            :powerOn="true"
             v-on:onLeftButtonPressed="onLeftButtonPressed"
             v-on:onLeftButtonReleased="onLeftButtonReleased"
             v-on:onUpButtonPressed="onUpButtonPressed"
@@ -110,7 +111,7 @@
             v-on:onSpaceButtonReleased="onSpaceButtonReleased"
         >
             <template #default>
-                <!-- 盤の全体サイズと、切り抜き領域 -->
+                <!-- ゲーム画面の全体サイズと、切り抜き領域 -->
                 <div
                     :style="{
                         position: 'relative',
@@ -118,7 +119,7 @@
                         top: `${-tileBoard1TileHeight}px`,
                         width: `${board1FileNum * tileBoard1TileWidth}px`,
                         height: `${board1RankNum * tileBoard1TileHeight}px`,
-                        zoom: appZoom,
+                        zoom: gameMachine1Zoom,
                         clipPath: `inset(
                             ${tileBoard1TileHeight}px
                             ${tileBoard1TileWidth}px
@@ -162,33 +163,33 @@
         </game-machine-waratch2>
 
 
-        <!-- タッチパネルでも操作できるように、ボタンを置いておきます。キーボードの操作説明も兼ねます。 -->
-        <p>キーボード操作方法</p>
-        <ul class="mb-6">
-            <li>
-                <!-- お好み設定パネル１ -->
-                <v-btn
-                    class="code-key"
-                    @touchstart.prevent="button1Ref?.press($event, onPreferences1ButtonPressed);"
-                    @touchend="button1Ref?.release();"
-                    @touchcancel="button1Ref?.release();"
-                    @touchleave="button1Ref?.release();"
-                    @mousedown.prevent="button1Ref?.handleMouseDown($event, onPreferences1ButtonPressed)"
-                    @mouseup="button1Ref?.release();"
-                    @mouseleave="button1Ref?.release();"
-                >{{ preferences1IsShowing ? '⚙️お好み設定を終わる' : '⚙️お好み設定を表示' }}</v-btn>
-                <section v-if="preferences1IsShowing" class="sec-1 pt-6 pb-6">
-                    <v-slider
-                        label="ズーム"
-                        v-model="appZoom"
-                        :min="1"
-                        :max="4"
-                        step="0.5"
-                        showTicks="always"
-                        thumbLabel="always" />
-                </section>
-            </li>
-        </ul>
+        <section class="sec-0 mt-6 mb-6">
+            <!-- お好み設定パネル１ -->
+            <v-btn
+                class="code-key"
+                @touchstart.prevent="button1Ref?.press($event, onPreferences1ButtonPressed);"
+                @touchend="button1Ref?.release();"
+                @touchcancel="button1Ref?.release();"
+                @touchleave="button1Ref?.release();"
+                @mousedown.prevent="button1Ref?.handleMouseDown($event, onPreferences1ButtonPressed)"
+                @mouseup="button1Ref?.release();"
+                @mouseleave="button1Ref?.release();"
+            >{{ gameMachine1PreferencesIsShowing ? '⚙️お好み設定を終わる' : '⚙️お好み設定を表示' }}</v-btn>
+            <section
+                v-if="gameMachine1PreferencesIsShowing"
+                class="sec-0 pt-6 pb-6"
+                style="background-color: rgb(0, 0, 0, 0.1);"
+            >
+                <v-slider
+                    label="ズーム"
+                    v-model="gameMachine1Zoom"
+                    :min="1"
+                    :max="4"
+                    step="0.125"
+                    showTicks="always"
+                    thumbLabel="always" />
+            </section>
+        </section>
 
 
         <talk-balloon
@@ -607,7 +608,7 @@ color = i % 2;
     // Tauri なら明示的にインポートを指定する必要がある。 Nuxt なら自動でインポートしてくれる場合がある。
     //
 
-    // from の階層が上の順、アルファベット順
+    // アルファベット順
     import TheAppHeader from '../the-app-header.vue';
     import BoardMadeOfTile from '@/components/BoardMadeOfTile.vue';
     import Button20250822 from '@/components/Button20250822.vue';
@@ -662,17 +663,6 @@ color = i % 2;
     const commonPapepoKingName = "パペポ王";
 
 
-    // ############################
-    // # アプリケーション・データ #
-    // ############################
-    //
-    // 今動いているアプリケーションの状態を記録しているデータ。特に可変のもの。
-    //
-
-    //const appZoom = ref<number>(2);    // ズーム
-    const appZoom = ref<number>(1);    // ズーム
-
-
     // ################
     // # オブジェクト #
     // ################
@@ -696,17 +686,23 @@ color = i % 2;
     const stopwatch1Ref = ref<InstanceType<typeof Stopwatch> | null>(null);
     const stopwatch1Count = ref<number>(0);   // カウントの初期値
 
+    // ++++++++++++++++++++++++++++++++++++
+    // + オブジェクト　＞　ゲームマシン１ +
+    // ++++++++++++++++++++++++++++++++++++
+
+    const gameMachine1Zoom = ref<number>(1);    // ズーム
+
     // ++++++++++++++++++++++++++++++++++
     // + オブジェクト　＞　設定パネル１ +
     // ++++++++++++++++++++++++++++++++++
 
     const problem1IsShowing = ref<boolean>(false);    // 設定を表示中
 
-    // ++++++++++++++++++++++++++++++++++
-    // + オブジェクト　＞　お好み設定１ +
-    // ++++++++++++++++++++++++++++++++++
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // + オブジェクト　＞　ゲームマシン１　＞　お好み設定 +
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    const preferences1IsShowing = ref<boolean>(false);
+    const gameMachine1PreferencesIsShowing = ref<boolean>(false);
 
     // ++++++++++++++++++++++++++++++++++++++++++
     // + オブジェクト　＞　デバッグ情報パネル１ +
@@ -1205,7 +1201,7 @@ color = i % 2;
      * ［お好み設定パネル１］を開くボタン。
      */
     function onPreferences1ButtonPressed() : void {
-        preferences1IsShowing.value = !preferences1IsShowing.value;
+        gameMachine1PreferencesIsShowing.value = !gameMachine1PreferencesIsShowing.value;
     }
 
 

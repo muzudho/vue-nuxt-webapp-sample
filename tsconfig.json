@@ -4,8 +4,8 @@
     "extends": "./.nuxt/tsconfig.json",
     
     "compilerOptions": {
-        // types ƒtƒHƒ‹ƒ_[‚ÉŒ^’è‹`‚ğ“ü‚ê‚é‚½‚ßF
-        "types": ["@types/node", "@nuxt/types"],
+        // types ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã«å‹å®šç¾©ã‚’å…¥ã‚Œã‚‹ãŸã‚ï¼š
+        //"types": ["@types/node", "@nuxt/types"],
         "typeRoots": ["./types"]
     }
 }
