@@ -239,12 +239,11 @@
             出てくる［水平方向のタイル数］スライダーバーを横に１つ動かして例えば１０にし、<br/>
             もう１回［⚙問題設定を終わる］に名前の変わっているボタンを押して設定を閉じ……
         </talk-balloon>
-        <br/>
-        <br/>
+
 
         <!-- 問題設定パネル１ -->
         <v-btn
-            class="code-key"
+            class="code-key mb-6"
             @touchstart.prevent="button1Ref?.press($event, onProblem1ButtonPressed);"
             @touchend="button1Ref?.release();"
             @touchcancel="button1Ref?.release();"
@@ -484,14 +483,7 @@ color = i % 2;
                 @mouseup="button1Ref?.release();"
                 @mouseleave="button1Ref?.release();"
             >未選択にする</v-btn>
-            <!-- フォーカスを外すためのダミー・ボタンです -->
-            <v-btn
-                class="noop-key"
-                ref="noopButton"
-                v-tooltip="'PCでのマウス操作で、フォーカスがコントロールに残って邪魔になるときは、このボタンを押してくれだぜ'"
-            >何もしないボタン</v-btn>
         </p>
-        <br/>
 
         <talk-balloon
             :src="commonKifuwaranyanSrc"
