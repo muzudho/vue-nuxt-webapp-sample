@@ -463,7 +463,7 @@
     // + インポート　＞　アセット +
     // ++++++++++++++++++++++++++++
 
-    import spriteBoard001Png from '@/assets/img/references/202509__warabenture__21-0649-spriteBoard002-o1o0.png';
+    import spriteBoard001Png from '@/assets/img/reference/202509__warabenture__21-0649-spriteBoard002-o1o0.png';
 
     // ++++++++++++++++++++++++++++++++++
     // + インポート　＞　コンポーネント +
